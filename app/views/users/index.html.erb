@@ -13,34 +13,8 @@
         </div>
       </div>
     <% end %>
-    <%= render 'search_user', users: @search_users %>
+    <%= render 'search_results', users: @users %>
   </div>
-
-  <%
-=begin%>
- <div class='table-responsive d-flex justify-content-center'>
-    <table class='table table-borderless lead w-75 mt-3'>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Surname</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @users.each do |user| %>
-          <tr>
-            <td><%= user.first_name %></td>
-            <td><%= user.last_name %></td>
-            <td><%= user.email %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div> 
-<%
-=end%>
 
   <br>
 

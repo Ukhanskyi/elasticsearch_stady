@@ -1,5 +1,5 @@
 <div class='table-responsive d-flex justify-content-center mt-3'>
-  <% if @search_users.to_a[0] %>
+  <% if users.to_a[0] %>
     <table class='table table-borderless lead w-75 mt-3'>
       <thead>
         <tr>
@@ -10,13 +10,7 @@
       </thead>
 
       <tbody>
-        <% users&.each do |user| %>
-          <tr>
-            <td><%= user.first_name %></td>
-            <td><%= user.last_name %></td>
-            <td><%= user.email %></td>
-          </tr>
-        <% end %>
+        <%= render 'users_list', users: users %>
       </tbody>
     </table>
   <% else %>

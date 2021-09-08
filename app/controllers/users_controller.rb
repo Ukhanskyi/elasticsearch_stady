@@ -2,11 +2,10 @@
 
 # class for user controller
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy]
+  before_action :set_user, except: %i[index create new]
 
   def index
-    search
-    # @users = User.all
+    @users = collection
   end
 
   def show; end
@@ -51,10 +50,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def search
-    @search_users = collection
-  end
-
   private
 
   def search_params
@@ -62,12 +57,7 @@ class UsersController < ApplicationController
   end
 
   def collection
-    if search_params[:query].blank?
-      UsersIndex.limit(1000).filter { match_all }
-    else
-      UsersIndex.limit(1000).query(query_string: { fields: %i[first_name last_name email],
-                                                   query: search_params[:query] })
-    end
+    UsersSearch.new(query: search_params[:query]).search
   end
 
   def set_user
