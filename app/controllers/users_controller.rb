@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def index
     @users = collection
+    @cities = City.all
   end
 
   def show; end
@@ -73,6 +74,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone, :email)
+    params.require(:user).permit(:first_name, :last_name, :phone, :email, :city_id)
   end
 end

@@ -12,7 +12,8 @@ class UsersIndex < Chewy::Index
   }
 
   index_scope User
+  field :city_id, type: 'integer'
+  field :email, analyzer: 'email'
   field :first_name, type: 'keyword'
   field :last_name, type: 'keyword'
-  field :email, analyzer: 'email'
 end

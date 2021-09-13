@@ -7,5 +7,6 @@ FactoryBot.define do
     last_name  { Faker::Name.last_name }
     email      { Faker::Internet.email }
     phone      { Faker::Number.leading_zero_number(digits: 10) }
+    association :city, factory: :city
   end
 end

@@ -27,9 +27,10 @@ RSpec.describe UsersController, type: :controller do
 
   describe 'POST #create' do
     context 'with valid params' do
-      let!(:params) { FactoryBot.attributes_for(:user) }
+      let!(:city)   { FactoryBot.create(:city) }
+      let!(:params) { FactoryBot.attributes_for(:user, city_id: city.id) }
 
-      it 'creates new kid' do
+      it 'creates new user' do
         expect { post :create, params: { user: params } }.to change(User, :count).by(1)
       end
     end
