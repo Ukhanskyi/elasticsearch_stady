@@ -1,0 +1,23 @@
+<div id='search_results' class='mt-3'>
+  <% if users.exists? %>
+    <div class='container'>
+      <div class='row mt-5 text-center'>
+        <div class='col'>
+          <h3> Name </h3>
+        </div>
+        <div class='col'>
+          <h3> Surname </h3>
+        </div>
+        <div class='col-5'>
+          <h3> Email </h3>
+        </div>
+      </div>
+      <div class='row mt-2'>
+        <%= render 'users_list', users: users %>
+      </div>
+    </div>
+
+  <% else %>
+    <p class='text-center lead'>Sorry, but nothing found =( </p>
+  <% end %>
+</div>

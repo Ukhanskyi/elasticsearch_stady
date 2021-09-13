@@ -1,0 +1,13 @@
+<% users.each do |user| %>
+  <div class='row'>
+    <div class='col'>
+      <p class='lead'> <%= user.first_name %> </p>
+    </div>
+    <div class='col'>
+      <p class='lead'> <%= user.last_name %> </p>
+    </div>
+    <div class='col-5'>
+      <p class='lead'> <%= user.email %> </p>
+    </div>
+  </div>
+<% end %>
