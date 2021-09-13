@@ -3,25 +3,194 @@
     "coverage": {
       "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/helpers/application_helper.rb": {
         "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/controllers/users_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          3,
+          null,
+          3,
+          3,
+          2,
+          1,
+          null,
+          4,
+          2,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          1,
+          null,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          4,
+          2,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null
+        ]
+      },
+      "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/models/user.rb": {
         "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
           1,
           null
         ]
       },
       "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
         ]
       },
+      "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/chewy/users_index.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/searches/users_search.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/mailers/application_mailer.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -32,20 +201,14 @@
       },
       "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/jobs/application_job.rb": {
         "lines": [
+          null,
+          null,
           0,
           null,
           null,
           null,
           null,
           null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
           0
         ],
         "branches": {
@@ -53,6 +216,8 @@
       },
       "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/channels/application_cable/connection.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -63,6 +228,8 @@
       },
       "/home/mukha/RubyProjects/elasticsearch_stady/elasticsearch_stady/app/channels/application_cable/channel.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -72,6 +239,6 @@
         }
       }
     },
-    "timestamp": 1630928389
+    "timestamp": 1631519902
   }
 }

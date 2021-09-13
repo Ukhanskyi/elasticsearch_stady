@@ -81,4 +81,14 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to(users_path)
     end
   end
+
+  describe 'POST #search' do
+    let!(:user) { FactoryBot.create(:user, first_name: 'Test_first_name', last_name: 'Test_last_name') }
+
+    it 'returns true' do
+      post :search, params: { query: 'Test_first_name' }, format: :turbo_stream
+
+      expect(response).to render_template(partial: 'users/_search_results')
+    end
+  end
 end
