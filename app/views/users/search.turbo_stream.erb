@@ -1,0 +1,5 @@
+<%= turbo_stream.replace(
+  :search_results,
+  partial: 'users/search_results',
+  locals: { users: @users }
+)%>
