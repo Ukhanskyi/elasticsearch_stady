@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def index
     @users = collection
-    @cities = City.all
+    @filters = ElasticAggregationsSerializer.new(collection.aggregations).to_hash
   end
 
   def show; end
@@ -74,6 +74,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone, :email, :city_id)
+    params.require(:user).permit(:first_name, :last_name, :phone, :email, :city_id, :programing_language)
   end
 end

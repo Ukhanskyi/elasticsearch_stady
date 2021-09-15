@@ -36,7 +36,7 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
 
     config.before(:suite) do
-      Chewy.strategy(:bypass)
+      Chewy.strategy(:urgent)
     end
   end
 

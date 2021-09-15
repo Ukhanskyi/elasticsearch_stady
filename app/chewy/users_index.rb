@@ -16,4 +16,5 @@ class UsersIndex < Chewy::Index
   field :email, analyzer: 'email'
   field :first_name, type: 'keyword'
   field :last_name, type: 'keyword'
+  field :programing_language, type: 'keyword'
 end

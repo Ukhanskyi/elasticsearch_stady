@@ -9,5 +9,12 @@
     <div class='col-5'>
       <p class='lead'> <%= user.email %> </p>
     </div>
+    <div class='col'>
+      <% city = City.find(user.city_id) %>
+      <p class='lead'> <%= city.name %> </p>
+    </div>
+    <div class='col-2'>
+      <p class='lead'> <%= user.programing_language %> </p>
+    </div>
   </div>
 <% end %>

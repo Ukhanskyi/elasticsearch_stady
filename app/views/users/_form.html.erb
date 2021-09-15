@@ -36,6 +36,11 @@
     <%= form.collection_select :city_id, City.all, :id, :name, {include_blank: false} %>
   </div>
 
+  <div class="field">
+    <%= form.label :programing_language %>
+    <%= form.text_field :programing_language %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

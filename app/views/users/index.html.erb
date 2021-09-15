@@ -3,11 +3,16 @@
   
   <div class='row m-0'>
     <div class='col-3'>
-      <%= render 'cities_list' %>
+      <div class='row'>
+        <%= render 'cities/cities_list', cities: @filters['cities'] %>
+      </div>
+      <div class='row'>
+        <%= render 'programing_languages_list', languages: @filters['languages'] %>
+      </div>
     </div>
     <div class='col-8'>
       <div class='row'>
-        <div class='container mt-5'>
+        <div class='container mt-2'>
           <%= form_with url: search_users_path do |f| %>
             <h1 class='text-center py-3'>Users</h1>
 
