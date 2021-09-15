@@ -3,10 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  let(:city) { FactoryBot.create(:city) }
-  let!(:user) { FactoryBot.create(:user, city_id: city.id) }
-
-  # render_views
+  let(:city)  { FactoryBot.create(:city) }
+  let!(:user) do
+    FactoryBot.create(:user, first_name: 'Test_first_name', last_name: 'Test_last_name', city_id: city.id,
+                             programing_language: 'Ruby')
+  end
 
   describe 'GET #index' do
     it 'renders the :index view' do
@@ -85,13 +86,10 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'POST #search' do
-    let!(:user) { FactoryBot.create(:user, first_name: 'Test_first_name', last_name: 'Test_last_name') }
-
     it 'returns true' do
       post :search, params: { query: 'Test_first_name' }, format: :turbo_stream
 
       expect(response).to have_http_status(200)
-      # expect(response).to render_template(partial: 'users/_search_results')
     end
   end
 end

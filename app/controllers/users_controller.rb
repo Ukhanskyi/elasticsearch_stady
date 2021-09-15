@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def index
     @users = collection
-    @filters = ElasticAggregationsSerializer.new(collection.aggregations).to_hash
+    @filters = ElasticAggregationsSerializer.new(collection.aggs).to_hash
   end
 
   def show; end

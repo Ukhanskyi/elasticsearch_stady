@@ -11,9 +11,8 @@
           <% cities.each do |key, filter| %>
             <div class='row m-0'>
               <div class='col'>
-                <% city = City.find(key) %>
                 <p class='lead my-1 py-0'>
-                  <%= link_to city.name + " (#{filter[:size]})",
+                  <%= link_to City.find(key).name + " (#{filter[:size]})",
                     "?filter_citty_ids=#{filter[:key]}",
                     class: 'text-decoration-none text-dark' %>
                 </p>
