@@ -12,9 +12,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_906_102_015) do
+ActiveRecord::Schema.define(version: 20_210_914_103_325) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
+  create_table 'cities', force: :cascade do |t|
+    t.string 'name', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+  end
 
   create_table 'users', force: :cascade do |t|
     t.string 'first_name', null: false
@@ -23,5 +29,8 @@ ActiveRecord::Schema.define(version: 20_210_906_102_015) do
     t.string 'email', null: false
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.bigint 'city_id'
+    t.string 'programing_language', null: false
+    t.index ['city_id'], name: 'index_users_on_city_id'
   end
 end

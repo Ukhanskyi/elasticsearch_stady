@@ -13,6 +13,7 @@ class UsersSearch
   def search
     chewy_index
       .query(query_condition)
+      .aggs(aggregation_condition)
       .limit(FILTER_SIZE)
   end
 
@@ -20,6 +21,17 @@ class UsersSearch
 
   def chewy_index
     UsersIndex
+  end
+
+  def aggregation_condition
+    {
+      languages: {
+        terms: { field: 'programing_language' }
+      },
+      cities: {
+        terms: { field: 'city_id' }
+      }
+    }
   end
 
   def query_condition

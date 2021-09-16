@@ -9,5 +9,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Chewy.strategy(:atomic) do
-  FactoryBot.create_list(:user, 20)
+  print "\nStarts cities seeding\t"
+  10.times do
+    FactoryBot.create(:city)
+    print '.'
+  end
+  puts "\nCities are created!"
+
+  print "\nStarts users seeding\t"
+  20.times do
+    FactoryBot.create(:user, city_id: rand(1..10))
+    print '.'
+  end
+  puts "\nUsers are created!"
 end
