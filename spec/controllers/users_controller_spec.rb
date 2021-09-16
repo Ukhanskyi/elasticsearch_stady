@@ -3,10 +3,15 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
+  render_views
+
   let(:city)  { FactoryBot.create(:city) }
   let!(:user) do
-    FactoryBot.create(:user, first_name: 'Test_first_name', last_name: 'Test_last_name', city_id: city.id,
-                             programing_language: 'Ruby')
+    FactoryBot.create(:user, city_id: city.id)
+  end
+
+  before do
+    UsersIndex.sync
   end
 
   describe 'GET #index' do
@@ -43,8 +48,10 @@ RSpec.describe UsersController, type: :controller do
       it 'does not create new user' do
         expect { post :create, params: { user: invalid_params } }.not_to change(User, :count)
       end
+
       it 'renders form' do
         post :create, params: { user: invalid_params }
+
         expect(response).to render_template(:new)
       end
     end
@@ -80,15 +87,19 @@ RSpec.describe UsersController, type: :controller do
 
     it 'redirects to users#index' do
       delete :destroy, params: { id: user.id }
+
       expect(response).to have_http_status(302)
       expect(response).to redirect_to(users_path)
     end
   end
 
   describe 'POST #search' do
-    it 'returns true' do
-      post :search, params: { query: 'Test_first_name' }, format: :turbo_stream
+    let!(:searched_user) { FactoryBot.create(:user, first_name: 'Searched_first_name') }
 
+    it 'returns true' do
+      post :search, params: { query: 'Searched_first_name' }, format: :turbo_stream
+
+      expect(response).to render_template(partial: 'users/_search_results')
       expect(response).to have_http_status(200)
     end
   end
